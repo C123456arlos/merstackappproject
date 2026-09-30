@@ -43,7 +43,7 @@ export const getUser = async (req, res) => {
         return res.json({success:false, message:error.message})
     }
 }
-export const getPublishedImages = async () => {
+export const getPublishedImages = async (req, res) => {
     try {
         const publishedImageMessages = await Chat.aggregate([
             { $unwind: '$messages' },

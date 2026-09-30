@@ -44,7 +44,8 @@ export const imageMessageController = async (req, res) => {
         chat.messages.push({role:'user', content:prompt, timestamp:Date.now(), isImage:false})
         const encodedPrompt = encodeURIComponent(prompt)
         const generatedImageUrl =
-        'https://ik.imagekit.io/ezvotm7lb/ik-genimg-prompt-A man climbing stairs/gen-man-climbing-stairs-image.png'
+       ' https://ik.imagekit.io/ikmedia/footwear.jpg?tr=bg-genfill-prompt-flowers,w-1000,h-960,cm-pad_resize'
+        // 'https://ik.imagekit.io/ezvotm7lb/ik-genimg-prompt-A man climbing stairs/gen-man-climbing-stairs-image.png'
             // `${process.env.IMAGEKIT_URL_ENDPOINT}/ik-genimg-prompt-A man eating a burger/app/${Date.now()}.png?tr`
             // `${process.env.IMAGEKIT_URL_ENDPOINT}/ik-genimg-prompt-${encodedPrompt}/app/${Date.now()}.png?tr=w-800,h-800`
         const aiImageResponse = await axios.get(generatedImageUrl, { responseType: 'arraybuffer' })
